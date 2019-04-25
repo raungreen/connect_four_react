@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// import { Observer, useObservable } from 'mobx-react-lite';
 import {
   Button,
   Modal,
@@ -8,24 +9,27 @@ import {
   Label
 } from 'reactstrap';
 import FormGroup from 'reactstrap/lib/FormGroup';
+import CreatePlayerName from './CreatePlayerName';
 
-interface Property<P> {
-  initalValue: string;
-}
+// interface Property<P> {
+//   initalValue: string;
+// }
 
-interface State<S> {
-  value: boolean;
-}
-
-class Rules extends Component<any, any> {
+// interface State<S> {
+//   value: boolean;
+// }
+type Props = {};
+type State = { modal: boolean; nestedModal: boolean; closeAll: boolean };
+class Rules extends Component<any, State> {
   // function Rules<P, S>(): any {
   // const [modal, setModal] = useState();
   // const [nestedModal, setNestedModal] = useState();
   // const [closeAll, setCloseAll] = useState<boolean>(false);
   // public state;
 
-  constructor(props: any) {
+  constructor(props: {}) {
     super(props);
+
     this.state = {
       modal: false,
       nestedModal: false,
@@ -54,6 +58,9 @@ class Rules extends Component<any, any> {
   };
 
   render() {
+    // const player1 = useObservable({ name: '' });
+    // const players = () => <CreatePlayerName input={players.name} />;
+
     return (
       <div>
         <Button color="danger" onClick={this.toggle}>
@@ -81,17 +88,21 @@ class Rules extends Component<any, any> {
               toggle={this.toggleNested}
               onClosed={this.state.closeAll ? this.toggle : undefined}
             >
-              <ModalHeader>Player Name</ModalHeader>
+              <ModalHeader>Players</ModalHeader>
               <ModalBody>
                 <FormGroup>
-                  <Label for="player1" sm={1}>
+                  {/* <Observer>
+                    {() => ( */}
+                  <Label className="p1Name" for="player1" sm={1}>
                     P1:
-                  </Label>{' '}
-                  <input type="text" placeholder="Player-1 name" />
-                  <Label for="player1" sm={1}>
+                  </Label>
+                  {/* )}
+                  </Observer> */}{' '}
+                  <input type="text" placeholder="Enter Name" />
+                  <Label for="player2" sm={1}>
                     P2:
                   </Label>{' '}
-                  <input type="text" placeholder="Player-2 name" />
+                  <input type="text" placeholder="Enter Name" />
                 </FormGroup>
               </ModalBody>
               <ModalFooter>

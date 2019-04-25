@@ -1,9 +1,14 @@
 import React from 'react';
+import { UncontrolledCollapse, Button, CardBody, Card } from 'reactstrap';
+import DataDisplay from '../UI/helpers/DataDisplay';
+import PlayerInfo from './PlayerInfo';
+import MoveHistory from './MoveHistory';
 
 const Sidebar = () => {
   return (
-    <div>
-      <h1>Sidebar</h1>
+    <div className="">
+      <PlayerInfo />
+      <MoveHistory />
     </div>
   );
 };

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Rules from '../UI/helpers/Rules';
 import Settings from '../UI/helpers/Settings';
+// import RightModal from '../presentational/RightModal';
 
 import {
   Container,
@@ -48,6 +49,11 @@ class ConnectNavBar extends Component {
                 Rules
               </NavLink>
             </NavItem>
+            {/* <NavItem>
+              <NavLink tag={RightModal} to="rules">
+                Rules
+              </NavLink>
+            </NavItem> */}
             <NavItem>
               <NavLink tag={Settings} to="settings">
                 Settings

@@ -7,6 +7,10 @@ import Settings from './components/UI/helpers/Settings';
 import Sidebar from './components/presentational/Sidebar';
 import CreateBoard from './components/presentational/CreateBoard';
 import './App.css';
+import DataDisplay from './components/UI/helpers/DataDisplay';
+import CreatePlayerName from './components/UI/helpers/CreatePlayerName';
+import Modals from './components/UI/helpers/Modals';
+import CreatedPlayer from './components/UI/helpers/CreatedPlayer';
 
 class App extends Component {
   render() {
@@ -14,8 +18,9 @@ class App extends Component {
       <Router>
         <Container>
           <ConnectNavBar />
-          <CreateBoard />
-          {/* <Sidebar /> */}
+          <DataDisplay />
+          <CreatedPlayer />
+          <CreatePlayerName />
           {/* <Switch>
             <Route exact path="/" component={Settings} />
           </Switch> */}
